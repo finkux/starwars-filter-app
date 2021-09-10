@@ -1,0 +1,11 @@
+<div class="panel">
+    <div class="panel__header">
+        <ng-content select="header"></ng-content>
+        <button class="panel__toggle" (click)="togglePanel()">
+            {{isPanelContentVisible === true ? '-' : '+'}}
+        </button>
+    </div>
+    <div class="panel__content" *ngIf="isPanelContentVisible">
+        <ng-content select="content"></ng-content>
+    </div>
+</div>
