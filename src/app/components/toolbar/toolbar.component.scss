@@ -1,0 +1,11 @@
+@import '../../../assets/scss/colors.scss';
+@import '../../../assets/scss/layout.scss';
+
+.toolbar {
+    padding: 40px 20px;
+    background-color: $color-grey-200;
+
+    &__container {
+        @include container;
+    }
+}
