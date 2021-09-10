@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-panel',
@@ -8,6 +8,8 @@ import { Component, OnInit, Output } from '@angular/core';
 export class PanelComponent implements OnInit {
   isPanelContentVisible: boolean = false;
 
+  @Output() toggle = new EventEmitter<boolean>();
+
   constructor() { }
 
   ngOnInit(): void {
@@ -15,6 +17,7 @@ export class PanelComponent implements OnInit {
 
   togglePanel(): void {
     this.isPanelContentVisible = !this.isPanelContentVisible;
+    this.toggle.emit(this.isPanelContentVisible);
   }
 
 }

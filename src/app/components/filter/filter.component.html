@@ -1,0 +1,20 @@
+<app-toolbar>
+    <input type="text" name="search" placeholder="Por ejemplo: Sky Walker..." />
+</app-toolbar>
+<div class="main-wrapper">
+    <div class="filter-list">
+
+        <app-panel *ngFor="let char of characters" (toggle)="togglePanelChange($event)">
+            <header>
+                <h2 class="title-character">{{char.name}}</h2>
+            </header>
+            <content>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur ab dignissimos atque voluptatem,
+                    commodi
+                    quo nostrum necessitatibus quidem, optio eveniet aliquid! Suscipit cum voluptas at quis pariatur.
+                    Sequi,
+                    explicabo ratione!</p>
+            </content>
+        </app-panel>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+@import '../../../assets/scss/colors.scss';
+@import '../../../assets/scss/layout.scss';
+
+.main-wrapper {
+    min-height: 80vh;
+    @include container;
+}
+
+.filter-list {
+    padding: 40px 0;
+}
+
+.title-character {
+    margin: 0;
+    padding: 0;
+}
+
+.filter {
+    
+    &__container {
+        @include container;
+        min-height: 80vh;
+    }
+    
+}
