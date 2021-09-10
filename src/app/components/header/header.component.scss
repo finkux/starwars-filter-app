@@ -1,0 +1,15 @@
+@import '../../../assets/scss/colors.scss';
+@import '../../../assets/scss/layout.scss';
+
+.header {
+    background-color: $color-brand-primary;
+
+    &__container {
+        @include container;
+    }
+
+    &__logo {
+        display: block;
+        margin: 0 auto;
+    }
+}
