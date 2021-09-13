@@ -1,0 +1,8 @@
+<div class="info-vehicles" *ngIf="infoVehicles.length > 0">
+    <div class="info-vehicles__wrapper">
+        <h3>Vehicles</h3>
+        <ul>
+            <li *ngFor="let vehicle of infoVehicles">{{vehicle.name}}</li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="info-films" *ngIf="infoFilms.length > 0">
+    <div class="info-films__wrapper">
+        <h3>Films</h3>
+        <ul>
+            <li *ngFor="let film of infoFilms">
+                <div>
+                    <h4>{{film.title}}</h4>
+                    <p>{{film.opening_crawl}}</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

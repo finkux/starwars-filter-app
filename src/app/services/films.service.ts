@@ -17,12 +17,28 @@ export class FilmsService {
     return this.httpClient.get(this.apiUrl + '/films');
   }
 
-  getCharacters(): Observable<any> {
-    return this.httpClient.get(this.apiUrl + '/people');
+  getFilm(path: string): Observable<any> {
+    return this.httpClient.get(path);
   }
 
-  getInfoCharacter(path: string): Observable<any> {
-    return this.httpClient.get(this.apiUrl + '/people/' + path);
+  getCharacters(page: number): Observable<any> {
+    return this.httpClient.get(this.apiUrl + '/people/?page=' + page);
+  }
+
+  getCharactersPath(path: string): Observable<any> {
+    return this.httpClient.get(path);
+  }
+
+  getInfoCharacter(id: number): Observable<any> {
+    return this.httpClient.get(this.apiUrl + '/people/' + id);
+  }
+
+  getVehicles(path: string): Observable<any> {
+    return this.httpClient.get(path);
+  }
+
+  searchCharacter(term: string): Observable<any> {
+    return this.httpClient.get(this.apiUrl + '/people/?search=' + term);
   }
 
 }

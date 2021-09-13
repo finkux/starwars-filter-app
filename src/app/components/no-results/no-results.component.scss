@@ -1,0 +1,11 @@
+.no-results {    
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    min-height: 80vh;
+    
+    &__info {
+        margin-top: 80px;
+    }
+}

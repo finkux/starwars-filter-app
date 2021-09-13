@@ -1,20 +1,41 @@
 <app-toolbar>
-    <input type="text" name="search" placeholder="Por ejemplo: Sky Walker..." />
+    <input type="text" name="search" placeholder="For example: Luke SkyWalker..." class="filter-input"
+        autocomplete="off" [formControl]="search" (keyup)="searchTerm()" />
 </app-toolbar>
 <div class="main-wrapper">
-    <div class="filter-list">
 
-        <app-panel *ngFor="let char of characters" (toggle)="togglePanelChange($event)">
-            <header>
-                <h2 class="title-character">{{char.name}}</h2>
-            </header>
-            <content>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur ab dignissimos atque voluptatem,
-                    commodi
-                    quo nostrum necessitatibus quidem, optio eveniet aliquid! Suscipit cum voluptas at quis pariatur.
-                    Sequi,
-                    explicabo ratione!</p>
-            </content>
-        </app-panel>
-    </div>
+    <ng-container *ngIf="characters.length else noResults">
+        <div class="filter-list">
+
+            <app-panel *ngFor="let char of characters; let indexOfelement=index;">
+                <header>
+                    <h2 class="title-character">{{char.name}}</h2>
+                </header>
+                <content>
+                    <app-info-films [films]="char.films"></app-info-films>
+                    <app-info-vehicles [vehicles]="char.vehicles"></app-info-vehicles>
+                </content>
+            </app-panel>
+        </div>
+
+        <div class="paginator" *ngIf="search.value.length === 0">
+            <div class="paginator__wrapper">
+                <div class="paginator__prev" (click)="prevPage()">
+                    <img src="../../../assets/images/nav-prev.svg" alt="">
+                </div>
+                <ul class="paginator__items">
+                    <li *ngFor="let page of characters; let indexOfelement=index;" (click)="goTo(indexOfelement+1)">
+                        {{indexOfelement + 1}}</li>
+                </ul>
+                <div class="paginator__next" (click)="nextPage()">
+                    <img src="../../../assets/images/nav-next.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </ng-container>
+
+    <ng-template #noResults>
+        <app-no-results></app-no-results>
+    </ng-template>
+
 </div>

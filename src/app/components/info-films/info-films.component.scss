@@ -1,0 +1,23 @@
+.info-films {
+    border: 1px solid #ccc;
+
+    &__wrapper {
+        padding: 16px;
+    }
+
+    h4 {
+        color: #333;
+    }
+
+    ul {
+        display: block;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    p {
+        font-size: 14px;
+        color: #6b6b6b;
+    }
+}
